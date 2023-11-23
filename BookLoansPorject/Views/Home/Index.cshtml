@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+    <title>Book Loan Services</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+          /*  background-color: #333;*/
+            color: darkblue;
+            text-align: center;
+            padding: .15%;
+        }
+
+        main {
+            padding: 1em;
+            text-align: center;
+        }
+
+        .carousel-container {
+            width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+            max-height: 400px; /* Adjust as needed */
+        }
+
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel img {
+                width: 80%;
+                object-fit: cover;
+                height: auto;
+                width: auto;
+        }
+
+        footer {
+            background-color: cornflowerblue;
+            color: white;
+            text-align: center;
+            padding: .15%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2><marquee>Welcome to Book Loan Services </marquee> </h2>
+    </header>
+
+    <main>
+        <div class="carousel-container">
+            <div class="carousel">
+                <img src="~/Pictures/bl10.jpg" class="d-block w-100" alt="...">
+                <img src="~/Pictures/book.jpg" class="d-block w-100" alt="...">
+                <img src="~/Pictures/book2.jpg" class="d-block w-100" alt="...">
+                <img src="~/Pictures/bookloan.jpg" class="d-block w-100" alt="...">
+                <img src="~/Pictures/bookloan2.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; - Open Library Management</p>
+    </footer>
+
+</body>
+</html>
+@section scripts{
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const carousel = document.querySelector(".carousel");
+            let counter = 0;
+
+            function rotateCarousel() {
+                counter = (counter + 1) % carousel.children.length;
+                const offset = -counter * 100;
+                carousel.style.transform = `translateX(${offset}%)`;
+            }
+
+            setInterval(rotateCarousel, 3000);
+        });
+    </script>
+    
+
+}
